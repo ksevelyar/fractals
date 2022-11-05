@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-
 <title>Canvas Boilerplate</title>
 <style>
 body {
@@ -25,17 +24,17 @@ const context = canvas.getContext('2d')
 window.addEventListener('resize', resizeCanvas, false)
 
 function resizeCanvas() {
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
+  canvas.width = window.innerWidth
+  canvas.height = window.innerHeight
 
-    const radius = 100
-    const x = canvas.width / 2
-    const y = canvas.height / 2
+  const radius = 100
+  const x = canvas.width / 2
+  const y = canvas.height / 2
 
-    context.beginPath()
-    context.fillStyle = "#FF0000"
-    context.arc(x, y, radius, 0, 2 * Math.PI)
-    context.stroke();
+  context.beginPath()
+  context.fillStyle = "#FF0000"
+  context.arc(x, y, radius, 0, 2 * Math.PI)
+  context.stroke();
 }
 
 resizeCanvas()
