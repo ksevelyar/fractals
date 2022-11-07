@@ -39,27 +39,25 @@ node
 node.append('text')
   .text(d => d.name)
   .attr('fill', '#6657A6')
-  .attr('dy', 40)
+  .attr('dy', 42)
 
 node
   .filter(d => d.user_counter)
   .append('circle')
-  .attr('r', data => String(data.user_counter).length * 6)
-  .attr('fill', '#B7B3A1')
+  .attr('class', 'counter')
+  .attr('r', 12)
   .attr('cy', -10)
   .attr('cx', 10)
 
-node.append('text')
+node
   .filter(d => d.user_counter)
+  .append('text')
   .text(d => d.user_counter)
   .attr('fill', 'black')
   .attr('x', -1)
   .attr('y', -5)
 
 function ticked() {
-  node
-    .attr('transform', data => 'translate(' + data.x + ', ' + data.y + ')')
-
   svg
     .selectAll('line')
     .data(graph.links)
@@ -68,6 +66,10 @@ function ticked() {
     .attr('x1', node => node.source.x + 0.1).attr('y1', node => node.source.y + 0.1)
     .attr('x2', node => node.target.x).attr('y2', node => node.target.y)
     .attr('stroke', '#666')
+
+  node
+    .attr('transform', data => 'translate(' + data.x + ', ' + data.y + ')')
+
 }
 
 simulation.nodes(graph.nodes).on('tick', ticked)
