@@ -1,7 +1,7 @@
 # Fractals
 
-## Julia Set
+## [The Julia Set](https://en.wikipedia.org/wiki/Julia_set)
 ![](/julia.png)
 
-## Mandelbrot Set
+## [The Mandelbrot Set](https://en.wikipedia.org/wiki/Mandelbrot_set)
 ![](/mandelbrot.png)
